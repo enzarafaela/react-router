@@ -13,7 +13,7 @@ function Home() {
 
       <main>
         <p>Cafés especiais, nacionais e importados.</p>
-        <button onClick={ () => navigate('/coffees') }>Conheça nossos produtos</button>
+        <button onClick={ () => navigate('/coffees', { state: { name: 'Rafaela'}}) }>Conheça nossos produtos</button>
       </main>
     </div>
   );
