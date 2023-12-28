@@ -6,7 +6,7 @@ function NavBar() {
        <nav>
         <NavLink to="/">Home</NavLink>
         {' '}
-        <NavLink to="/coffees">Coffee List</NavLink>
+        <NavLink to="/coffees" state={ { name: 'Luiz'}}>Coffee List</NavLink>
        </nav>   
     );
 }

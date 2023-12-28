@@ -2,11 +2,14 @@
 // import { useState } from "react";
 
 import { coffeeList } from "../../data";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-import './CoffeeLits.css';
+import './CoffeeList.css';
 
 function CoffeeList() {
+  const location = useLocation();
+  console.log(location);
+  
     // const navigate = useNavigate();
 
     // Example if you want to validate data before load another page
@@ -20,12 +23,16 @@ function CoffeeList() {
 
   return (
     <div className="list-page">
-      <h1>Nossos cafés</h1>
+      <h1 className="list-title">Nossos cafés</h1>
       <main>
         <ul>
           {
             coffeeList.map((coffee) => (
-              <Link to={`/coffees/${coffee.slug}`}>
+              <Link 
+              to={`/coffees/${coffee.slug}`}
+              key={coffee.id}
+              state={{name: 'Enza'}}
+              >
                 <li className="coffee-card">{coffee.title}</li>                                
               </Link>    
             ))
